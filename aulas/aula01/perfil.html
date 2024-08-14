@@ -4,23 +4,45 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aluno Online</title>
+    <link rel="stylesheet" href="estilos.css">
   </head>
   <body>
     <header>
-      <img src="" alt="Logo da Aplicação" />
-      <input type="search" name="pesquisa" />
-      <img src="" alt="Icone da pesauisa" />
+      <div>
+        <img src="" alt="Logo da Aplicação" />
+        <h1>Aluno Online</h1>
+      </div>
+      <div>
+        <input type="search" name="filtro" placeholder="Pesquisar..." />
+        <img src="" alt="Ícone de Pesquisar" />
+      </div>
     </header>
-    <aside>
-      <ul>
-        <li><a href="home.html">Home</a></li>
-        <li><a href="perfil.html">Perfil</a></li>
-        <li><a href="index.html">Sair</a></li>
-      </ul>
-    </aside>
     <main>
-        <h1>Perfil</h1>
+      <nav>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="perfil.html">Perfil</a></li>
+          <li><a href="index.html">Sair</a></li>
+        </ul>
+      </nav>
+      <section>
+        <h2>Perfil do Aluno</h2>
+        <form action="" method="post">
+          <div>
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nome" required />
+          </div>
+          <div>
+            <label for="email">E-mail</label>
+            <input type="text" name="email" id="email" required />
+          </div>
+          <div>
+            <label for="senha">Senha</label>
+            <input type="password" name="senha" id="senha" required />
+          </div>
+          <input type="submit" value="Salvar" />
+        </form>
+      </section>
     </main>
-    <footer>Copyright (C) 2024</footer>
   </body>
 </html>
