@@ -1,6 +1,6 @@
-function BotaoSubmit() {
+function BotaoSubmit(props) {
     return (
-        <></>
+        <button>{props.texto}</button>
     )
 }
 
