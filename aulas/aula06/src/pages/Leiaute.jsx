@@ -1,4 +1,5 @@
 import { NavLink, Outlet } from "react-router-dom";
+import "./Leiaute.css";
 
 function Leiaute() {
   return (
@@ -10,7 +11,7 @@ function Leiaute() {
         <nav>
           <ul>
             <li><NavLink to="/home">Home</NavLink></li>
-            <li><NavLink to="/perfil">Perfil</NavLink></li>
+            <li><NavLink to="/perfil/1">Perfil</NavLink></li>
             <li><NavLink to="/">Sair</NavLink></li>
           </ul>
         </nav>

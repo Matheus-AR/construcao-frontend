@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import Perfil from "./pages/Perfil";
 import Error404 from "./pages/Error404";
 import Leiaute from "./pages/Leiaute";
-import "./App.css";
+// import "./App.css";
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
         <Route index element={<Login />} />
         <Route element={<Leiaute />}>
           <Route path="/home" element={<Home />} />
-          <Route path="/perfil" element={<Perfil />} />
+          <Route path="/perfil/:id" element={<Perfil />} />
         </Route>
         <Route path="*" element={<Error404 />} />
       </Routes>
