@@ -1,3 +1,5 @@
+import "./Cabecalho.css";
+
 function Cabecalho() {
     return (
         <header>

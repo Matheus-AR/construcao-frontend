@@ -1,3 +1,5 @@
+import "./Secao.css";
+
 function Secao(props) {
     return (
         <section>

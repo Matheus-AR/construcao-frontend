@@ -1,3 +1,5 @@
+import "./Painel.css";
+
 function Painel(props) {
     return (
         <article>

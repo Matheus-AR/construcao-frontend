@@ -1,5 +1,6 @@
 import Painel from "../../components/Painel";
 import Secao from "../../components/Secao";
+import "./Home.css";
 
 function Home() {
     return (
