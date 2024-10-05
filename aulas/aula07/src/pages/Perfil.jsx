@@ -1,10 +1,19 @@
+import Menu from "../components/Menu";
 import FormPerfil from "./FormPerfil";
 
 function Perfil() {
   return (
     <>
-      <h1>Perfil do Usuario</h1>
-      <FormPerfil />
+      <header>
+        <h1>Aluno Online</h1>
+      </header>
+      <main>
+        <Menu />
+        <section>
+          <h2>Página Inicial</h2>
+          <FormPerfil />
+        </section>
+      </main>
     </>
   );
 }
