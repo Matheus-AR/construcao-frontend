@@ -8,6 +8,7 @@ function FormTarefa() {
     event.preventDefault();
     if (tarefa) {
         incluir(tarefa);
+        setTarefa("");
     }
   };
   return (
