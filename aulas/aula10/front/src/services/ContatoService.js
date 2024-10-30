@@ -31,7 +31,19 @@ function criarContato(contato) {
   // }
 }
 
-function ataulizarContato(contato) {}
+function atualizarContato(contato) {
+  return axios
+    .put(`${url}/${contato.id}`, {
+      nome: contato.nome,
+      telefone: contato.telefone,
+    })
+    .then((response) => {
+      return { sucesso: true, dados: response.data };
+    })
+    .catch((error) => {
+      return { sucesso: false, mensagem: error.message };
+    });
+}
 
 function removerContato(id) {
   return axios
@@ -55,4 +67,10 @@ function obterContato(id) {
     });
 }
 
-export { carregarContatos, criarContato, removerContato, obterContato };
+export {
+  carregarContatos,
+  criarContato,
+  removerContato,
+  obterContato,
+  atualizarContato,
+};
