@@ -4,6 +4,11 @@
       "email": "jose@iesb.br",
       "password": "$2a$10$RFTPnRR6UvFWssTnxervxusoPXMFouBlfp1A.INSabCEFVWVvP.j6",
       "id": 1
+    },
+    {
+      "email": "matheus@iesb.br",
+      "password": "$2a$10$/GzWoqYgYa/oaVNl7trorOV2fcTEZOWE5TOC1Xltk/NINOAB59aey",
+      "id": 2
     }
   ]
 }

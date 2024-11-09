@@ -10,7 +10,7 @@ function autenticar(dados) {
       return { sucesso: true, dados: response.data };
     })
     .catch((error) => {
-      return { sucesso: false, mensagem: error.message };
+      return { sucesso: false, mensagem: error.response.data };
     });
 }
 
@@ -24,7 +24,11 @@ function cadastrar(dados) {
       return { sucesso: true, dados: response.data };
     })
     .catch((error) => {
-      return { sucesso: false, mensagem: error.message };
+      if (error.response) {
+        return {sucesso: false, mensagem: error.response.data}
+      } else {
+        return { sucesso: false, mensagem: error.message };
+      }
     });
 }
 

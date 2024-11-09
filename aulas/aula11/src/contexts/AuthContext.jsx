@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import { autenticar } from "../services/AuthService";
+import { autenticar, cadastrar } from "../services/AuthService";
 
 const AuthContext = createContext();
 
@@ -24,8 +24,13 @@ function AuthProvider(props) {
     setUsuario({ email: "", perfil: "", logado: false });
   };
 
-  const registrar = (dados) => {
-    setUsuario({ email: dados.email, perfil: "aluno", logado: true });
+  const registrar = async (dados) => {
+    const resposta = await cadastrar(dados);
+    if (resposta.sucesso) {
+      setUsuario({ email: dados.email, perfil: "aluno", logado: true });
+    } else {
+      setMsg(resposta.mensagem);
+    }
   };
 
   const contexto = {
