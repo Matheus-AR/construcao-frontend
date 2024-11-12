@@ -9,15 +9,15 @@ function AuthProvider(props) {
     perfil: "",
     logado: false,
   });
-  const [msg, setMsg] = useState("");
 
   const login = async (dados) => {
       const resposta = await autenticar(dados);
       if (resposta.sucesso) {
         setUsuario({ email: dados.email, perfil: "aluno", logado: true });
       } else {
-        setMsg(resposta.mensagem);
+        return resposta.mensagem;
       }
+      return "";
   };
 
   const logout = () => {
@@ -29,13 +29,13 @@ function AuthProvider(props) {
     if (resposta.sucesso) {
       setUsuario({ email: dados.email, perfil: "aluno", logado: true });
     } else {
-      setMsg(resposta.mensagem);
+      return resposta.mensagem;
     }
+    return "";
   };
 
   const contexto = {
     usuario,
-    msg,
     login,
     logout,
     registrar
