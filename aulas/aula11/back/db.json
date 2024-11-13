@@ -7,8 +7,13 @@
     },
     {
       "email": "matheus@iesb.br",
-      "password": "$2a$10$/GzWoqYgYa/oaVNl7trorOV2fcTEZOWE5TOC1Xltk/NINOAB59aey",
+      "password": "$2a$10$J.H8k0usgROUY6YgOguDmeEhdPurWnsG6yZ9FaK6yp102c9xC1XHq",
       "id": 2
+    },
+    {
+      "email": "maria@iesb.br",
+      "password": "$2a$10$nVCXviF2WFrbIsywTmA2zuG1uEaoWU7hpcaIZc6paonHNlYOjSmce",
+      "id": 3
     }
   ]
 }
