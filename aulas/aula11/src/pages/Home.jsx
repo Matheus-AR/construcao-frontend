@@ -1,17 +1,15 @@
 import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
 
 import { AuthContext } from "../contexts/AuthContext";
+import Menu from "../components/Menu";
 
 function Home() {
-  const { usuario, logout } = useContext(AuthContext);
-  const navigate = useNavigate();
+  const { usuario } = useContext(AuthContext);
   return (
     <>
+      <Menu />
       <h1>Home</h1>
       <p>Olá {usuario.email}!</p>
-      <button onClick={(e) => logout()}>Sair</button>
-      <button onClick={(e) => navigate("/perfil")}>Perfil</button>
     </>
   );
 }

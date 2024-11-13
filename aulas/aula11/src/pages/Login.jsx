@@ -15,13 +15,13 @@ function Login() {
     if (erro) {
       setMsg(erro);
     }
-  }
+  };
 
   return (
     <>
       <h1>Login</h1>
       {msg && <p>{msg}</p>}
-      <Formulario onEnviar={onEnviar} />
+      <Formulario onEnviar={onEnviar} valores={{ email: null, senha: null }} />
       <Link to="/registrar">Registrar</Link>
     </>
   );

@@ -10,7 +10,11 @@ function autenticar(dados) {
       return { sucesso: true, dados: response.data };
     })
     .catch((error) => {
-      return { sucesso: false, mensagem: error.response.data };
+      if (error.response) {
+        return { sucesso: false, mensagem: error.response.data };
+      } else {
+        return { sucesso: false, mensagem: error.message };
+      }
     });
 }
 
@@ -25,11 +29,29 @@ function cadastrar(dados) {
     })
     .catch((error) => {
       if (error.response) {
-        return {sucesso: false, mensagem: error.response.data}
+        return { sucesso: false, mensagem: error.response.data };
       } else {
         return { sucesso: false, mensagem: error.message };
       }
     });
 }
 
-export { autenticar, cadastrar };
+function alterar(dados) {
+  return axios
+    .put(`http://localhost:3000/users/${dados.id}`, {
+      email: dados.email,
+      password: dados.senha,
+    })
+    .then((response) => {
+      return { sucesso: true, dados: response.data };
+    })
+    .catch((error) => {
+      if (error.response) {
+        return { sucesso: false, mensagem: error.response.data };
+      } else {
+        return { sucesso: false, mensagem: error.message };
+      }
+    });
+}
+
+export { autenticar, cadastrar, alterar };

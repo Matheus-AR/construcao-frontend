@@ -17,11 +17,11 @@ function Registrar() {
     } else {
       navigate("/");
     }
-  }
+  };
   return (
     <>
       <h1>Registrar</h1>
-      <Formulario onEnviar={onEnviar} />
+      <Formulario onEnviar={onEnviar} valores={{ email: null, senha: null }} />
       <Link to="/">Voltar</Link>
     </>
   );

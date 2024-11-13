@@ -1,5 +1,6 @@
 import { createContext, useState } from "react";
-import { autenticar, cadastrar } from "../services/AuthService";
+
+import { alterar, autenticar, cadastrar } from "../services/AuthService";
 
 const AuthContext = createContext();
 
@@ -11,16 +12,22 @@ function AuthProvider(props) {
   });
 
   const login = async (dados) => {
-      const resposta = await autenticar(dados);
-      if (resposta.sucesso) {
-        setUsuario({ email: dados.email, perfil: "aluno", logado: true });
-      } else {
-        return resposta.mensagem;
-      }
-      return "";
+    const resposta = await autenticar(dados);
+    if (resposta.sucesso) {
+      setUsuario({
+        id: resposta.dados.user.id,
+        token: resposta.dados.accessToken,
+        email: dados.email,
+        perfil: "aluno",
+        logado: true,
+      });
+    } else {
+      return resposta.mensagem;
+    }
+    return "";
   };
 
-  const logout = () => {
+  const logout = async () => {
     setUsuario({ email: "", perfil: "", logado: false });
   };
 
@@ -34,11 +41,22 @@ function AuthProvider(props) {
     return "";
   };
 
+  const atualizar = async (dados) => {
+    const resposta = await alterar(dados);
+    if (resposta.sucesso) {
+      setUsuario({ email: dados.email, perfil: "aluno", logado: true });
+    } else {
+      return resposta.mensagem;
+    }
+    return "";
+  };
+
   const contexto = {
     usuario,
     login,
     logout,
-    registrar
+    registrar,
+    atualizar,
   };
 
   return (
